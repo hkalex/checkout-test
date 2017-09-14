@@ -2,10 +2,10 @@ import DEFAULT_SERVICES from '../services';
 
 
 export default class Volume {
-  constructor(definition, services) {
+  constructor(definition, services = null) {
     this._validateDefinition(definition);
     this.definition = definition;
-    this.services = services || DEFAULT_SERVICES;
+    this.services = Object.assign({}, DEFAULT_SERVICES, services);
   }
 
   _validateDefinition(definition) {
@@ -23,12 +23,21 @@ export default class Volume {
 
   apply(cartItems) {
     /**
-     * 
+     * cartItems is an JSON object
+     * {
+     *   "<productCode>": {
+     *     qty: int,
+     *     subTotal: decimal
+     *   }
+     * }
      */
-    if (!cartItems) return null;
-    if (!cartItems[this.definition.productCode]) return null;
+    if (!cartItems) return;
+    if (!cartItems[this.definition.productCode]) return;
 
-    let cartItems = cartItems[this.definition.productCode];
+    let cartItem = cartItems[this.definition.productCode];
 
+    if (cartItem.qty >= this.definition.qty) {
+      cartItem.subTotal = this.definition.newPrice * cartItem.qty;
+    }
   }
 }
