@@ -26,7 +26,7 @@ export default class Combo {
     }
   }
 
-  apply(cartItems) {
+  applyRule(cartItems) {
     /**
      * cartItems is an JSON object
      * {
@@ -39,8 +39,6 @@ export default class Combo {
     if (!cartItems) return;
     let cartItem = cartItems[this.definition.productCode];
     if (!cartItem) return;
-
-    debugger;
 
     let extraBundle = Math.floor(cartItem.qty / this.definition.qty) * this.definition.bundleQty;
 

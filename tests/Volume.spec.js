@@ -94,7 +94,7 @@ describe('Volume', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 400); // after apply
     });
 
@@ -108,7 +108,7 @@ describe('Volume', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 250); // after apply
     });
 
@@ -122,7 +122,7 @@ describe('Volume', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 300); // after apply
     });
 

@@ -81,7 +81,7 @@ describe('PromoCode', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 90);
     });
 
@@ -100,7 +100,7 @@ describe('PromoCode', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 2);
       assert.equal(cartItems.p1.subTotal, 180);
       assert.equal(cartItems.p2.qty, 2);

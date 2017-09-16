@@ -21,7 +21,7 @@ export default class Volume {
     if (!definition.hasOwnProperty('productCode') || !definition.hasOwnProperty('qty') || !definition.hasOwnProperty('newPrice')) throw 'Definition must be {productCode:string, qty:int, newPrice: decimal} JSON';
   }
 
-  apply(cartItems) {
+  applyRule(cartItems) {
     /**
      * cartItems is an JSON object
      * {

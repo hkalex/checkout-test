@@ -7,7 +7,7 @@
         "request": "launch",
         "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
         "stopOnEntry": false,
-        "args": ["--no-timeouts", "--colors", "--compilers", "js:babel-core/register", "tests/**/*.spec.js"], //you can specify paths to specific tests here
+        "args": ["--no-timeouts", "--colors", "--compilers", "js:babel-core/register", "tests/**/*.real.spec.js"], //you can specify paths to specific tests here
         "cwd": "${workspaceRoot}",
         "runtimeExecutable": null,
         "env": {

@@ -13,6 +13,8 @@ export default class Combo {
     this._validateDefinition(definition);
     this.definition = definition;
     this.services = Object.assign({}, DEFAULT_SERVICES, services);
+    this.priceList = this.services.priceList;
+
   }
 
   _validateDefinition(definition) {
@@ -24,7 +26,7 @@ export default class Combo {
     }
   }
 
-  apply(cartItems) {
+  applyRule(cartItems) {
     /**
      * cartItems is an JSON object
      * {

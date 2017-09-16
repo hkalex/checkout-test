@@ -94,7 +94,7 @@ describe('Combo', function () {
         }
       }
 
-      var newItems = combo.apply(cartItems);
+      var newItems = combo.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
     });
 
@@ -108,7 +108,7 @@ describe('Combo', function () {
         }
       }
 
-      var newItems = combo.apply(cartItems);
+      var newItems = combo.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
     });
     it('Combo - buy 6 p1 with $400', function () {
@@ -121,7 +121,7 @@ describe('Combo', function () {
         }
       }
 
-      var newItems = combo.apply(cartItems);
+      var newItems = combo.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 400); // after apply
     });
     it('Combo - buy 7 p1 with $500', function () {
@@ -134,7 +134,7 @@ describe('Combo', function () {
         }
       }
 
-      var newItems = combo.apply(cartItems);
+      var newItems = combo.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 500); // after apply
     });
   });

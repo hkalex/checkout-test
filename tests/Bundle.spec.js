@@ -118,7 +118,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 100); // after apply
       assert.equal(cartItems.p2.qty, 1);
       assert.equal(cartItems.p2.subTotal, 0);
@@ -134,7 +134,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
       assert.equal(cartItems.p2.qty, 2);
       assert.equal(cartItems.p2.subTotal, 0);
@@ -154,7 +154,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 100); // after apply
       assert.equal(cartItems.p2.qty, 2);
       assert.equal(cartItems.p2.subTotal, 200);
@@ -174,7 +174,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
       assert.equal(cartItems.p2.qty, 4);
       assert.equal(cartItems.p2.subTotal, 400);
@@ -197,7 +197,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 400); // after apply
       assert.equal(!!cartItems.p2, false);
     });
@@ -212,7 +212,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 5);
       assert.equal(cartItems.p1.subTotal, 500);
       assert.equal(cartItems.p2.qty, 2);
@@ -233,7 +233,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.apply(cartItems);
+      var newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 5);
       assert.equal(cartItems.p1.subTotal, 500);
       assert.equal(cartItems.p2.qty, 3);

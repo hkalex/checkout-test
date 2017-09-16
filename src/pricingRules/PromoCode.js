@@ -22,7 +22,7 @@ export default class PromoCode {
     }
   }
 
-  apply(cartItems) {
+  applyRule(cartItems) {
     /**
      * cartItems is an JSON object
      * {
