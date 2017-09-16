@@ -1,6 +1,6 @@
-import DEFAULT_SERVICES from '../services';
+const DEFAULT_SERVICES = require('../services');
 
-export default class Combo {
+module.exports = class Combo {
   constructor(definition, services = null) {
     /**
      * definition should be a JSON object like

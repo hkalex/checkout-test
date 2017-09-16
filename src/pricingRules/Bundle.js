@@ -1,6 +1,6 @@
-import DEFAULT_SERVICES from '../services';
+const DEFAULT_SERVICES = require('../services');
 
-export default class Combo {
+module.exports = class Combo {
   constructor(definition, services = null) {
     /**
      * definition should be a JSON object like
@@ -14,6 +14,7 @@ export default class Combo {
     this._validateDefinition(definition);
     this.definition = definition;
     this.services = Object.assign({}, DEFAULT_SERVICES, services);
+    this.priceList = this.services.priceList;
   }
 
   _validateDefinition(definition) {
@@ -48,6 +49,7 @@ export default class Combo {
         targetItem.qty += extraBundle;
       } else {
         cartItems[this.definition.bundleProductCode] = {
+          productName: this.priceList[this.definition.bundleProductCode].productName,
           qty: extraBundle,
           subTotal: 0
         }

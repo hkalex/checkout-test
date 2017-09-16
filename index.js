@@ -1,7 +1,7 @@
-import ShoppingCart from './src/ShoppingCart';
-import { pricingRules } from './src/pricingRules';
+const ShoppingCart = require('./src/ShoppingCart');
+const pricingRules = require('./src/pricingRules').pricingRules;
 
-export function commandLineHandler(argv, ShoppingCart, logger) {
+function commandLineHandler(argv, ShoppingCart, logger) {
   if (argv.length < 3) {
     throw 'Please read readme.md for the usage'
   }
@@ -32,6 +32,10 @@ export function commandLineHandler(argv, ShoppingCart, logger) {
       logger(`${item.qty} x ${item.productName}`)
     }
   }
+}
+
+module.exports = {
+  commandLineHandler
 }
 
 

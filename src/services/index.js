@@ -1,4 +1,4 @@
-export const priceList = {
+const priceList = {
   "ult_small": {
     productName: 'Unlimited 1GB',
     price: 24.9
@@ -18,6 +18,6 @@ export const priceList = {
 };
 
 
-export default {
+module.exports = {
   priceList
 }

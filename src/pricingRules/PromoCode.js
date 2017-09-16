@@ -1,6 +1,6 @@
-import DEFAULT_SERVICES from '../services';
+const DEFAULT_SERVICES = require('../services');
 
-export default class PromoCode {
+module.exports = class PromoCode {
   constructor(definition, services = null) {
     /**
      * definition should be a JSON object like

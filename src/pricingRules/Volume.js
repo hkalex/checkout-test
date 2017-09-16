@@ -1,7 +1,6 @@
-import DEFAULT_SERVICES from '../services';
+const DEFAULT_SERVICES = require('../services');
 
-
-export default class Volume {
+module.exports = class Volume {
   constructor(definition, services = null) {
     this._validateDefinition(definition);
     this.definition = definition;

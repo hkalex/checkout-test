@@ -1,7 +1,6 @@
-import DEFAULT_SERVICES from './services';
+const DEFAULT_SERVICES = require('./services');
 
-
-export default class ShoppingCart {
+class ShoppingCart {
   constructor(pricingRules = null, services = null) {
     this.services = Object.assign({}, DEFAULT_SERVICES, services);
     this.pricingRules = pricingRules;
@@ -49,3 +48,5 @@ export default class ShoppingCart {
 ShoppingCart.new = function (pricingRules, services = null) {
   return new ShoppingCart(pricingRules, services);
 }
+
+module.exports = ShoppingCart;

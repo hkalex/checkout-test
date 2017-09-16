@@ -1,13 +1,9 @@
-import Combo from './Combo';
-import Bundle from './Bundle';
-import Volume from './Volume';
-import PromoCode from './PromoCode';
+const Combo = require('./Combo');
+const Bundle = require('./Bundle');
+const Volume = require('./Volume');
+const PromoCode = require('./PromoCode');
 
-export default {
-  Combo, Bundle, Volume, PromoCode
-}
-
-export const pricingRules = [
+const pricingRules = [
   new Combo({
     productCode: 'ult_small',
     buy: 2,
@@ -29,3 +25,7 @@ export const pricingRules = [
     percentage: 0.9 // means 10% off
   })
 ]
+
+module.exports = {
+  Combo, Bundle, Volume, PromoCode, pricingRules
+}
