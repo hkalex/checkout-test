@@ -31,3 +31,23 @@ node index "ult_small,ult_medium,ult_medium"
 node index "ult_small,1gb|I<3AMAYSIM"
 ```
 
+
+## Project structure
+```
+- src
+  - pricingRules
+    - Bundle.js     // handles buy X bundle Y (buy Unlimited 2GB bundle 1GB Datapack free)
+    - Combo.js      // handles buy N get M free (buy 2 Unlimited 1GB get 1 Unlimited 1GB free)
+    - index.js
+    - PromoCode.js  // handles the promotion code
+    - Volume.js     // handles the buy N product X with $Q (buy more than 3 Unlimited 5GB, the price will be $39.90)
+  - services
+    - index.js      // this contains the price list
+  - prototypes.js   // ths additional prototype methods on the JavaScript objects
+  - ShoppingCart.js // the ShoppingCart logi
+- tests             // all the test cases under this folder
+  - ...spec.js
+- index.js          // handles the command line interface
+```
+
+
