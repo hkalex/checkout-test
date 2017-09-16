@@ -1,4 +1,4 @@
-#Checkout cart
+# Checkout
 
 This is the checkout cart program.
 
