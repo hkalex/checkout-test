@@ -4,7 +4,7 @@ import '../src/prototypes';
 import PromoCode from '../src/PricingRules/PromoCode';
 
 
-var mockServices = {
+const mockServices = {
   priceList: {
     p1: {
       productName: 'P1',
@@ -21,7 +21,7 @@ var mockServices = {
   }
 }
 
-var promoCode1 = {
+const promoCode1 = {
   promoCode: 'p1Promo',
   percentage: 0.9
 };
@@ -71,9 +71,9 @@ describe('PromoCode', function () {
   });
   describe('apply rule promoCode1', function () {
     it('PromoCode - buy 1 p1 with $90', function () {
-      var instance = new PromoCode(promoCode1, mockServices);
+      let instance = new PromoCode(promoCode1, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 1,
           subTotal: 100,
@@ -81,14 +81,14 @@ describe('PromoCode', function () {
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 90);
     });
 
     it('PromoCode - buy 2 p1 and 2 p2 with $540', function () {
-      var instance = new PromoCode(promoCode1, mockServices);
+      let instance = new PromoCode(promoCode1, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 2,
           subTotal: 200,
@@ -100,7 +100,7 @@ describe('PromoCode', function () {
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 2);
       assert.equal(cartItems.p1.subTotal, 180);
       assert.equal(cartItems.p2.qty, 2);

@@ -4,7 +4,7 @@ import '../src/prototypes';
 import Bundle from '../src/PricingRules/Bundle';
 
 
-var mockServices = {
+const mockServices = {
   priceList: {
     p1: {
       productName: 'P1',
@@ -21,14 +21,14 @@ var mockServices = {
   }
 }
 
-var buyOneP1GetOneP2Free = {
+const buyOneP1GetOneP2Free = {
   productCode: 'p1',
   qty: 1,
   bundleProductCode: 'p2',
   bundleQty: 1
 };
 
-var buyfiveP1GetTwoP2Free = {
+const buyfiveP1GetTwoP2Free = {
   productCode: 'p1',
   qty: 5,
   bundleProductCode: 'p2',
@@ -109,41 +109,41 @@ describe('Bundle', function () {
   });
   describe('apply rule buyOneP1GetOneP2Free', function () {
     it('Bundle - buy 1 p1 with $100', function () {
-      var instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
+      let instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 1,
           subTotal: 100
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 100); // after apply
       assert.equal(cartItems.p2.qty, 1);
       assert.equal(cartItems.p2.subTotal, 0);
     });
 
     it('Bundle - buy 2 p1 with $200', function () {
-      var instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
+      let instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 2,
           subTotal: 200
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
       assert.equal(cartItems.p2.qty, 2);
       assert.equal(cartItems.p2.subTotal, 0);
     });
 
     it('Bundle - buy 1 p1 and 1 p2 with $300', function () {
-      var instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
+      let instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 1,
           subTotal: 100
@@ -154,16 +154,16 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 100); // after apply
       assert.equal(cartItems.p2.qty, 2);
       assert.equal(cartItems.p2.subTotal, 200);
     });
 
     it('Bundle - buy 2 p1 and 2 p2 with $600', function () {
-      var instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
+      let instance = new Bundle(buyOneP1GetOneP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 2,
           subTotal: 200
@@ -174,7 +174,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 200); // after apply
       assert.equal(cartItems.p2.qty, 4);
       assert.equal(cartItems.p2.subTotal, 400);
@@ -188,31 +188,31 @@ describe('Bundle', function () {
 
   describe('apply rule buyfiveP1GetTwoP2Free', function () {
     it('Bundle - buy 4 p1', function () {
-      var instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
+      let instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 4,
           subTotal: 400
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 400); // after apply
       assert.equal(!!cartItems.p2, false);
     });
 
     it('Bundle - buy 5 p1', function () {
-      var instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
+      let instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 5,
           subTotal: 500
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 5);
       assert.equal(cartItems.p1.subTotal, 500);
       assert.equal(cartItems.p2.qty, 2);
@@ -220,9 +220,9 @@ describe('Bundle', function () {
     });
 
     it('Bundle - buy 5 p1 and 1 p2 with $300', function () {
-      var instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
+      let instance = new Bundle(buyfiveP1GetTwoP2Free, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 5,
           subTotal: 500
@@ -233,7 +233,7 @@ describe('Bundle', function () {
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.qty, 5);
       assert.equal(cartItems.p1.subTotal, 500);
       assert.equal(cartItems.p2.qty, 3);

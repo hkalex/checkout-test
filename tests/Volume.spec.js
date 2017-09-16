@@ -4,7 +4,7 @@ import '../src/prototypes';
 import Volume from '../src/PricingRules/Volume';
 
 
-var mockServices = {
+const mockServices = {
   priceList: {
     p1: {
       productName: 'P1',
@@ -21,7 +21,7 @@ var mockServices = {
   }
 }
 
-var p1HalfPriceIf5OrMore = {
+const p1HalfPriceIf5OrMore = {
   productCode: 'p1',
   qty: 5,
   newPrice: 50
@@ -85,44 +85,44 @@ describe('Volume', function () {
   });
   describe('apply', function () {
     it('Volume - buy 4 p1 with $400', function () {
-      var instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
+      let instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 4,
           subTotal: 400
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 400); // after apply
     });
 
     it('Volume - buy 5 p1 with $250', function () {
-      var instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
+      let instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 5,
           subTotal: 500
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 250); // after apply
     });
 
     it('Volume - buy 6 p1 with $300', function () {
-      var instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
+      let instance = new Volume(p1HalfPriceIf5OrMore, mockServices);
 
-      var cartItems = {
+      let cartItems = {
         'p1': {
           qty: 6,
           subTotal: 600
         }
       }
 
-      var newItems = instance.applyRule(cartItems);
+      let newItems = instance.applyRule(cartItems);
       assert.equal(cartItems.p1.subTotal, 300); // after apply
     });
 

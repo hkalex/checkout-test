@@ -1,4 +1,4 @@
-export var priceList = {
+export const priceList = {
   "ult_small": {
     productName: 'Unlimited 1GB',
     price: 24.9

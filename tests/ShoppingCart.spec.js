@@ -3,7 +3,7 @@ import assert from 'assert';
 import '../src/prototypes';
 import ShoppingCart from '../src/ShoppingCart';
 
-var mockServices = {
+const mockServices = {
   priceList: {
     p1: {
       productName: 'P1',
@@ -20,7 +20,7 @@ var mockServices = {
   }
 }
 
-let dummyPricingRules = [
+const dummyPricingRules = [
   {
     applyRule: function (cartItems) {
       if (cartItems.p1) {
@@ -69,14 +69,14 @@ describe('ShoppingCart', function () {
     cartItems = cart.items;
     assert.equal(cartItems.p3.promoCode, 'PPP');
 
-    var total = cart.total;
+    let total = cart.total;
     assert.equal(total, 900);
 
     // ensure the PricingRules are called
     cartItems = cart.items;
     assert.equal(cartItems.p1.applied, true);
     assert.equal(cartItems.p2.applied, true);
-    
-    
+
+
   })
 })

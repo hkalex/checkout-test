@@ -7,7 +7,7 @@ export default {
   Combo, Bundle, Volume, PromoCode
 }
 
-export var pricingRules = [
+export const pricingRules = [
   new Combo({
     productCode: 'ult_small',
     buy: 2,

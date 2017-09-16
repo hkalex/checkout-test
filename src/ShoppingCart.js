@@ -17,6 +17,7 @@ export default class ShoppingCart {
     } else {
       this.cartItems[productCode] = {
         qty: 1,
+        productName: this.priceList[productCode].productName,
         subTotal: this.priceList[productCode].price
       }
     }
@@ -44,3 +45,7 @@ export default class ShoppingCart {
   }
 }
 
+
+ShoppingCart.new = function (pricingRules, services = null) {
+  return new ShoppingCart(pricingRules, services);
+}
