@@ -21,7 +21,7 @@ const pricingRules = [
     bundleQty: 1
   }),
   new PromoCode({
-    promoCode: 'I<3AMAYSIM',
+    promoCode: 'PROMOCODE111',
     percentage: 0.9 // means 10% off
   })
 ]

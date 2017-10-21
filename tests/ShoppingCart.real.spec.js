@@ -81,7 +81,7 @@ describe('ShoppingCart.real with new ShoppingCart syntax', function () {
   it('Scenario 4', function () {
     let cart = new ShoppingCart(pricingRules);
     cart.add('ult_small');
-    cart.add('1gb', 'I<3AMAYSIM');
+    cart.add('1gb', 'PROMOCODE111');
 
     let total = cart.total;
     assert.equal(total, 31.32);
@@ -173,7 +173,7 @@ describe('ShoppingCart.real with ShoppingCart.new syntax', function () {
   it('Scenario 4', function () {
     let cart = ShoppingCart.new(pricingRules);
     cart.add('ult_small');
-    cart.add('1gb', 'I<3AMAYSIM');
+    cart.add('1gb', 'PROMOCODE111');
 
     let total = cart.total;
     assert.equal(total, 31.32);

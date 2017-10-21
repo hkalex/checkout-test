@@ -28,7 +28,7 @@ node index "ult_small,ult_medium,ult_medium"
 
 # Scenario 4
 # Pipe line (|) means the promo code
-node index "ult_small,1gb|I<3AMAYSIM"
+node index "ult_small,1gb|PROMOCODE111"
 ```
 
 
